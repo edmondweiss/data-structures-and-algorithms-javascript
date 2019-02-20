@@ -6,6 +6,10 @@ class LinkedList {
     this.size = 0;
   }
 
+  size() {
+    return this.size;
+  }
+
   isEmpty() {
     return this.size === 0;
   }

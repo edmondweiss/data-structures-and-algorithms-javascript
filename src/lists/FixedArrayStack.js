@@ -9,12 +9,16 @@ module.exports = class FixedArrayStack {
     return this.topElementIndex === -1;
   }
 
+  isFull() {
+    return this.size() === this.topElementIndex;
+  }
+
   size() {
     return this.topElementIndex + 1;
   }
 
   push(element) {
-    if (this.size() === this.topElementIndex) {
+    if (this.isFull()) {
       throw new Error('The stack is full!');
     }
     this.data[++this.topElementIndex] = element;
